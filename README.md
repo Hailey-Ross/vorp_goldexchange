@@ -22,24 +22,12 @@ This script is provided as-is. Your performance may vary.
 - Change any desired settings in `config.lua` file
 - Restart / Start your server
 
+=================================================
+=================================================
 
-# Original README FILE
+## Original README FILE
 
 Black Market Items Buyer
-
-=================================================
-
-Installation :
-
-1 - ensure vorp_fence
-
-2 - add vorp_fence to resources folder
-
-A simple variation of the vendor script to allow sell things in "Black Market"
-
-I did an English version just rename en.lua to config.lua
-
-=================================================
 
 This is heavily based on the beautiful Nerakhon's and Blue's bwrp_animalshelter script menu and location system, I added all the Fence Vendors locations and options to sell stuff there
 
