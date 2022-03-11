@@ -10,7 +10,7 @@ This script is provided as-is. Your performance may vary.
 - Adjustable Rate at which Gold can be exchanged
 - Config option for setting Ped name has been added
 - Checks if you have enough money to cover the charge (No negative balances)
-- Blip is  toggleable on / off
+- Blips are toggleable on / off
 
 ## Dependencies:
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
