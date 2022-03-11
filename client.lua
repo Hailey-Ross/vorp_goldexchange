@@ -13,7 +13,7 @@ local function IsNearZone ( location )
 
 	for i = 1, #location do
 		if #(playerloc - location[i]) < 2.0 then
-		return true, i
+			return true, i
 		end
 	end
 
@@ -53,7 +53,7 @@ local function DisplayHelp( _message, x, y, w, h, enableShadow, col1, col2, col3
 	SetTextCentre(centre)
 
 	if enableShadow then
-	SetTextDropshadow(1, 0, 0, 0, 255)
+		SetTextDropshadow(1, 0, 0, 0, 255)
 	end
 
 	Citizen.InvokeNative(0xADA9255D, 10);
@@ -68,8 +68,8 @@ Citizen.CreateThread( function()
 		if WarMenu.IsMenuOpened('fence') then
 			for i = 1, #chatarra do
 				if WarMenu.Button(chatarra[i]['Text'], chatarra[i]['SubText'], chatarra[i]['Desc']) then
-				TriggerServerEvent('gold:vender', chatarra[i]['Param']) 
-				--WarMenu.CloseMenu()
+					TriggerServerEvent('gold:vender', chatarra[i]['Param']) 
+				--	WarMenu.CloseMenu()
 				end
 			end
 			WarMenu.Display()
@@ -84,7 +84,7 @@ Citizen.CreateThread(function()
 		local IsZone, IdZone = IsNearZone(Config.Coords)      
        
         if IsZone then 
-		DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
+			DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
             if IsControlJustPressed(0, keys['E']) then
                 WarMenu.OpenMenu('fence')
             end
@@ -96,13 +96,13 @@ end)
 
 RegisterNetEvent('UI:NotificaVenta')
 AddEventHandler('UI:NotificaVenta', function( _message )
-TriggerEvent("vorp:TipRight", _message, 100)
+	TriggerEvent("vorp:TipRight", _message, 100)
 end)
 
 Citizen.CreateThread(function()
 	for k, v in pairs(Config.Blips) do
         local blip = N_0x554d9d53f696d002(1664425300, v.x, v.y, v.z)
-		SetBlipSprite(blip, Config.BlipSprite, 1)
+		SetBlipSprite(blip, Config.BlipSprite, Config.BlipToggle)
 		SetBlipScale(blip, 0.2)
 		Citizen.InvokeNative(0x9CB1A1623062F402, blip, Config.BlipName)
 	end  
