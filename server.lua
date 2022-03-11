@@ -12,18 +12,18 @@ AddEventHandler( 'gold:vender', function ( args )
     local Character = User.getUsedCharacter
     local _src   = source
     local _exchangerate = args['ExchangeRate']
-	local _exchangecost = args['ExchangeCost']
+    local _exchangecost = args['ExchangeCost']
     local _model = args['Tipo']
-	local _mens  = args['Mens']
+    local _mens  = args['Mens']
 	
-	local inv_count = VorpInv.getItemCount(_src, _model)
+    local inv_count = VorpInv.getItemCount(_src, _model)
 	
     if inv_count < 1 then
         TriggerClientEvent( 'UI:NotificaVenta', _src, Config.NoInv )
         return
     end
 	
-	if Character.money < _exchangecost then
+    if Character.money < _exchangecost then
         TriggerClientEvent( 'UI:NotificaVenta', _src, Config.NoMoney )
         return
     end
