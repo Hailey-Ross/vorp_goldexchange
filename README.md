@@ -4,6 +4,14 @@ in the [VorpCore Discord](https://discord.vorpcore.com)
 
 This script is provided as-is. Your performance may vary.
 
+## Features
+- Updated Language text so its more dynamic with config options
+- Added ability to charge for exchanging gold
+- Adjustable Rate at which Gold can be exchanged
+- Config option for setting Ped name has been added
+- Checks if you have enough money to cover the charge (No negative balances)
+- Blip is  toggleable on / off
+
 ## Dependencies:
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
 - [VORP-Inventory](https://github.com/VORPCORE/VORP-Inventory)
