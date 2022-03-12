@@ -24,21 +24,23 @@ Citizen.CreateThread(function()
     --local hashModel = GetHashKey("RE_GOLDPANNER_MALES_01")  -- Set PED ID
 	local hashModel = GetHashKey(Config.Ped)
         -- Loading Model
-       if IsModelValid(hashModel) then 
+    	if IsModelValid(hashModel) then 
            RequestModel(hashModel)
-           while not HasModelLoaded(hashModel) do                
+        	while not HasModelLoaded(hashModel) do                
                Wait(100)
-           end
-       end        
+        	end
+    	end        
        -- Spawn Ped
-       local npc = CreatePed(hashModel, Config.PedX, Config.PedY, Config.PedZ, Config.PedHeading, false, true, true, true)
-       Citizen.InvokeNative(0x283978A15512B2FE, npc, true) -- SetRandomOutfitVariation
-       SetEntityNoCollisionEntity(PlayerPedId(), npc, false)
-       SetEntityCanBeDamaged(npc, false)
-       SetEntityInvincible(npc, true)
-       Wait(1000)
-       FreezeEntityPosition(npc, true) -- NPC can't escape
-       SetBlockingOfNonTemporaryEvents(npc, true) -- NPC can't be scared
+		for k, v in pairs(Config.Blips) do
+    		local npc = CreatePed(hashModel, v.x, v.y, v.z, v.h, false, true, true, true)
+    		Citizen.InvokeNative(0x283978A15512B2FE, npc, true) -- SetRandomOutfitVariation
+    		SetEntityNoCollisionEntity(PlayerPedId(), npc, false)
+    		SetEntityCanBeDamaged(npc, false)
+    		SetEntityInvincible(npc, true)
+    		Wait(1000)
+    		FreezeEntityPosition(npc, true) -- NPC can't escape
+    		SetBlockingOfNonTemporaryEvents(npc, true) -- NPC can't be scared
+		end
 end)
 
 
@@ -84,16 +86,14 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-
-		local IsZone, IdZone = IsNearZone(Config.Coords)      
-       
-        if IsZone then 
-			DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
+		for k, v in pairs(Config.Blips) do
+			local IsZone, IdZone = IsNearZone(v.x,v.y,v.z)      
+        	if IsZone then 
+				DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
             if IsControlJustPressed(0, keys['E']) then
                 WarMenu.OpenMenu('fence')
             end
         end
-
 		Citizen.Wait(0)
 	end
 end)
