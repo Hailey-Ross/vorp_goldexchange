@@ -31,8 +31,7 @@ This script is provided as-is. Your performance may vary.
 - Add `ensure vorp_goldexchange` to your `server.cfg` file
 - Change any desired settings in `config.lua` file
 - Restart / Start your server
-
-=================================================  
+  
   
 =================================================  
 ## Original README FILE
