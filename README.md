@@ -8,8 +8,8 @@ This script is provided as-is. Your performance may vary.
 - Updated Language text so its more dynamic with config options
 - Added ability to charge for exchanging gold
 - Adjustable Rate at which Gold can be exchanged
-- Config option for setting Ped name has been added
-- Checks if you have enough money to cover the charge (No negative balances)
+- Config option for setting Ped model added
+- Checks if you have enough money to cover the fee (No negative balances)
 - Blips are toggleable on / off
 
 ## Dependencies:
