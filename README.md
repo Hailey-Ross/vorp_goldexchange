@@ -22,7 +22,8 @@ This script is provided as-is. Your performance may vary.
 - Go to your Resources Folder in Terminal  
 **Windows** `cd C:\redm\server-data\resources\`  
 **Linux** `cd ~/redm/server-data/resources/`
-- Clone this Repository into the directory you chose:  
+- Create a Folder named `vorp_goldexchange`
+- Clone this Repository into the folder  
 `git clone https://github.com/Hailey-Ross/vorp_goldexchange .`  
 *Keep the period at the end!*
 - Add `ensure vorp_goldexchange` to your `server.cfg` file
