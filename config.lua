@@ -14,16 +14,19 @@ Config.ItemMessageBack = ' Gold Bar'
 
 Config.BlipSprite = -2029148647
 Config.BlipName = 'Gold Exchange'
+
 Config.Ped = 'RE_GOLDPANNER_MALES_01'  -- Alter PED Here
+Config.PedX = 1416.92-- (X, Y, Z, H) Coordinates for PED
+Config.PedY = 273.55
+Config.PedZ = 88.53
+Config.PedHeading = 198.26
 
 Config.Coords = {
-	vector3(1418.35,270.67,90.14) -- Emerald Ranch Fence Location
+	vector3(1416.92,273.55,90.14) -- Emerald Ranch Fence Location
 }
 
-Config.Blips = { -- Comment out any coords you don't want on the map
-
-	{x = 1418.35, y = 270.67, z = 90.14}, -- Emerald Ranch Fence Location
-
+Config.Blips = {
+	--{x = 1418.35, y = 270.67, z = 90.14}, -- Emerald Ranch Fence Location
 }
 
 Config.Chatarra = {
