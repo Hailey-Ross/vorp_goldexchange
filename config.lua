@@ -22,7 +22,7 @@ Config.Coords = {
 
 Config.Blips = {
 
-	--{x = 1418.35, y = 270.67, z = 90.14}, -- Emerald Ranch Fence Location
+	{x = 1418.35, y = 270.67, z = 90.14}, -- Emerald Ranch Fence Location
 
 }
 
