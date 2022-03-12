@@ -6,8 +6,10 @@ This script is provided as-is. Your performance may vary.
 
 ## Features
 - Updated Language text so its more dynamic with config options
-- Added ability to charge for exchanging gold
-- Adjustable Rate at which Gold can be exchanged
+- Gold Currency can be traded for Gold Bars
+- Ability to adjust how gold currency each Gold Bar is
+- Added ability to charge for exchanging gold bars
+- Adjustable Rate at which Gold bars can be exchanged
 - Config option for setting Ped model added
 - Checks if you have enough money to cover the fee based on config of exchange price (No negative balances)
 
