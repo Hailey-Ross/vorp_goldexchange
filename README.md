@@ -18,7 +18,7 @@ This script is provided as-is. Your performance may vary.
 - [VORP-Inputs](https://github.com/VORPCORE/VORP-Inputs)
 
 ## Installation
-- Stop your CFX Server *NOT required*
+- Stop your CFX Server (*NOT required*)
 - Go to your Resources Folder in Terminal  
 **Windows** `cd C:\redm\server-data\resources\`  
 **Linux** `cd ~/redm/server-data/resources/`
