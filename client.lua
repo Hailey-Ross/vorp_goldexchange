@@ -71,6 +71,10 @@ Citizen.CreateThread( function()
 					TriggerServerEvent('gold:vender', chatarra[i]['Param']) 
 				--	WarMenu.CloseMenu()
 				end
+				if WarMenu.Button(chatarra[i]['Text2'], chatarra[i]['SubText2'], chatarra[i]['Desc2']) then
+					TriggerServerEvent('gold:revender', chatarra[i]['Param']) 
+				--	WarMenu.CloseMenu()
+				end
 			end
 			WarMenu.Display()
 		end
@@ -102,7 +106,7 @@ end)
 Citizen.CreateThread(function()
 	for k, v in pairs(Config.Blips) do
         local blip = N_0x554d9d53f696d002(1664425300, v.x, v.y, v.z)
-		SetBlipSprite(blip, Config.BlipSprite, Config.BlipToggle)
+		SetBlipSprite(blip, Config.BlipSprite, 1)
 		SetBlipScale(blip, 0.2)
 		Citizen.InvokeNative(0x9CB1A1623062F402, blip, Config.BlipName)
 	end  
