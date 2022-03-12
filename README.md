@@ -10,7 +10,6 @@ This script is provided as-is. Your performance may vary.
 - Adjustable Rate at which Gold can be exchanged
 - Config option for setting Ped model added
 - Checks if you have enough money to cover the fee based on config of exchange price (No negative balances)
-- Blips are toggleable on / off
 
 ## Dependencies:
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
