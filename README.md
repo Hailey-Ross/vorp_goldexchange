@@ -5,13 +5,13 @@ in the [VorpCore Discord](https://discord.vorpcore.com)
 This script is provided as-is. Your performance may vary.
 
 ## Features
-- Updated Language text so its more dynamic with config options
+- Updated Language text so its more dynamic using config options
 - Gold Currency can be traded for Gold Bars
-- Ability to adjust how gold currency each Gold Bar is
-- Added ability to charge for exchanging gold bars
+- Added ability to adjust how much gold currency each Gold Bar is exchanged for
+- Added ability to charge cash for exchanging gold bars
 - Adjustable Rate at which Gold bars can be exchanged
 - Config option for setting Ped model added
-- Checks if you have enough money to cover the fee based on config of exchange price (No negative balances)
+- Checks if you have enough money/gold bars/inventory space to do the exchange (No negative balances)
 
 ## Dependencies:
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
