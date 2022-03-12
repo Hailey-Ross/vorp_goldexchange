@@ -20,7 +20,7 @@ Config.Coords = {
 	vector3(1418.35,270.67,90.14) -- Emerald Ranch Fence Location
 }
 
-Config.Blips = {
+Config.Blips = { -- Comment out any coords you don't want on the map
 
 	{x = 1418.35, y = 270.67, z = 90.14}, -- Emerald Ranch Fence Location
 
