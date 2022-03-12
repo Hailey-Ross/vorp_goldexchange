@@ -15,7 +15,7 @@ Config.ItemMessageBack = ' Gold Bar'
 Config.BlipSprite = -2029148647
 Config.BlipName = 'Gold Exchange'
 
-Config.Ped = 'RE_GOLDPANNER_MALES_01'  -- Alter PED Here
+Config.Ped = 'RE_GOLDPANNER_MALES_01'  -- Alter PED Here https://sporny-dev.net/index.php?title=Peds
 
 Config.Coords = {
 	vector3(1416.92,273.55,90.14) -- Emerald Ranch Fence Location
