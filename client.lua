@@ -16,7 +16,6 @@ local function IsNearZone ( location )
 			return true, i
 		end
 	end
-
 end
 
 ---- spawn ped 
@@ -86,15 +85,15 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		for k, v in pairs(Config.Blips) do
-			local IsZone, IdZone = IsNearZone(v.x,v.y,v.z)      
-        	if IsZone then 
-				DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
-            if IsControlJustPressed(0, keys['E']) then
+	for k, v in pairs(Config.Blips) do
+	local IsZone, IdZone = IsNearZone(v.x,v.y,v.z)      
+        if IsZone then 
+		DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
+        if IsControlJustPressed(0, keys['E']) then
                 WarMenu.OpenMenu('fence')
-            end
+            	end
         end
-		Citizen.Wait(0)
+	Citizen.Wait(0)
 	end
 end)
 
