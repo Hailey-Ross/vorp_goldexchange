@@ -12,7 +12,7 @@ local function IsNearZone ( location )
 	local playerloc = GetEntityCoords(player, 0)
 
 	for i = 1, #location do
-		if #(playerloc - location[i]) < 2.0 then
+		if #(playerloc - location[i]) < 1.0 then
 			return true, i
 		end
 	end
@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
            end
        end        
        -- Spawn Ped
-       local npc = CreatePed(hashModel, 1416.92, 273.55, 88.53, 198.26, false, true, true, true)
+       local npc = CreatePed(hashModel, Config.PedX, Config.PedY, Config.PedZ, Config.PedHeading, false, true, true, true)
        Citizen.InvokeNative(0x283978A15512B2FE, npc, true) -- SetRandomOutfitVariation
        SetEntityNoCollisionEntity(PlayerPedId(), npc, false)
        SetEntityCanBeDamaged(npc, false)
