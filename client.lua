@@ -12,15 +12,15 @@ local function IsNearZone ( location )
 	local playerloc = GetEntityCoords(player, 0)
 
 	for i = 1, #location do
-		if #(playerloc - location[i]) < 1.0 then
+		if #(playerloc - location[i]) < 2.2 then
 			return true, i
 		end
 	end
+
 end
 
 ---- spawn ped 
 Citizen.CreateThread(function()
-    --local hashModel = GetHashKey("RE_GOLDPANNER_MALES_01")  -- Set PED ID
 	local hashModel = GetHashKey(Config.Ped)
         -- Loading Model
     	if IsModelValid(hashModel) then 
@@ -85,15 +85,14 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-	for k, v in pairs(Config.Blips) do
-	local IsZone, IdZone = IsNearZone(v.x,v.y,v.z)      
-        if IsZone then 
-		DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
-        if IsControlJustPressed(0, keys['E']) then
+			local IsZone, IdZone = IsNearZone(Config.Coords)      
+        	if IsZone then 
+				DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
+            if IsControlJustPressed(0, keys['E']) then
                 WarMenu.OpenMenu('fence')
-            	end
+            end
         end
-	Citizen.Wait(0)
+		Citizen.Wait(0)
 	end
 end)
 
@@ -103,10 +102,16 @@ AddEventHandler('UI:NotificaVenta', function( _message )
 end)
 
 Citizen.CreateThread(function()
-	for k, v in pairs(Config.Blips) do
-        local blip = N_0x554d9d53f696d002(1664425300, v.x, v.y, v.z)
-		SetBlipSprite(blip, Config.BlipSprite, 1)
-		SetBlipScale(blip, 0.2)
-		Citizen.InvokeNative(0x9CB1A1623062F402, blip, Config.BlipName)
-	end  
+	while true do
+		if Config.BlipToggle == True then
+			Wait(1000)
+		else
+			for k, v in pairs(Config.Blips) do
+        	local blip = N_0x554d9d53f696d002(1664425300, v.x, v.y, v.z)
+				SetBlipSprite(blip, Config.BlipSprite, 1)
+				SetBlipScale(blip, 0.2)
+				Citizen.InvokeNative(0x9CB1A1623062F402, blip, Config.BlipName)
+			end
+		end
+	end
 end)
