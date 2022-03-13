@@ -17,8 +17,6 @@ This script is provided as-is. Your performance may vary.
 ## Dependencies:
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
 - [VORP-Inventory](https://github.com/VORPCORE/VORP-Inventory)
-- [VORP-Character](https://github.com/VORPCORE/VORP-Character)
-- [VORP-Inputs](https://github.com/VORPCORE/VORP-Inputs)
 
 ## Installation
 - Stop your CFX Server (*NOT required*)
