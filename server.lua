@@ -53,7 +53,7 @@ AddEventHandler( 'gold:revender', function ( args )
         return
     end
     
-    if inv_count > 99 then
+    if inv_count > Config.MaxGoldBars then
         TriggerClientEvent( 'UI:NotificaVenta', _src, Config.NoSpace )
         return
     end
