@@ -14,6 +14,7 @@ Config.ItemMessageBack = ' Gold Bar'
 
 Config.BlipSprite = -2029148647
 Config.BlipName = 'Gold Exchange'
+Config.BlipToggle = True-- Toggle Blips?
 
 Config.Ped = 'RE_GOLDPANNER_MALES_01'  -- Alter PED Here https://sporny-dev.net/index.php?title=Peds
 
