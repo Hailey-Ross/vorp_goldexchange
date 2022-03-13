@@ -11,10 +11,11 @@ Config.ItemMessage = ' Gold Bar'
 Config.SelltextBack = 'You pay $'
 Config.ExchangeTextBack = ' to exchange for '
 Config.ItemMessageBack = ' Gold Bar'
+Config.MaxGoldBars = 99
 
 Config.BlipSprite = -2029148647
 Config.BlipName = 'Gold Exchange'
-Config.BlipToggle = True-- Toggle Blips
+Config.BlipToggle = False-- Toggle Blips
 
 Config.Ped = 'RE_GOLDPANNER_MALES_01'  -- Alter PED Here https://sporny-dev.net/index.php?title=Peds
 
