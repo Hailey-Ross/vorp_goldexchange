@@ -85,9 +85,9 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-			local IsZone, IdZone = IsNearZone(Config.Coords)      
+		local IsZone, IdZone = IsNearZone(Config.Coords)      
         	if IsZone then 
-				DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
+			DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
             if IsControlJustPressed(0, keys['E']) then
                 WarMenu.OpenMenu('fence')
             end
@@ -106,7 +106,7 @@ Citizen.CreateThread(function()
 		if Config.BlipToggle == True then
 			Wait(1000)
 		else
-			for k, v in pairs(Config.Blips) do
+		for k, v in pairs(Config.Blips) do
         	local blip = N_0x554d9d53f696d002(1664425300, v.x, v.y, v.z)
 				SetBlipSprite(blip, Config.BlipSprite, 1)
 				SetBlipScale(blip, 0.2)
