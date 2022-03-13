@@ -25,9 +25,9 @@ Citizen.CreateThread(function()
         -- Loading Model
     	if IsModelValid(hashModel) then 
            RequestModel(hashModel)
-        	while not HasModelLoaded(hashModel) do                
-               Wait(100)
-        	end
+        while not HasModelLoaded(hashModel) do                
+           Wait(100)
+        end
     	end        
        -- Spawn Ped
 		for k, v in pairs(Config.Blips) do
@@ -54,7 +54,7 @@ local function DisplayHelp( _message, x, y, w, h, enableShadow, col1, col2, col3
 	SetTextCentre(centre)
 
 	if enableShadow then
-		SetTextDropshadow(1, 0, 0, 0, 255)
+	SetTextDropshadow(1, 0, 0, 0, 255)
 	end
 
 	Citizen.InvokeNative(0xADA9255D, 10);
@@ -85,14 +85,14 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		local IsZone, IdZone = IsNearZone(Config.Coords)      
-        	if IsZone then 
-			DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
-            if IsControlJustPressed(0, keys['E']) then
+	local IsZone, IdZone = IsNearZone(Config.Coords)      
+        if IsZone then 
+		DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
+        if IsControlJustPressed(0, keys['E']) then
                 WarMenu.OpenMenu('fence')
             end
         end
-		Citizen.Wait(0)
+	Citizen.Wait(0)
 	end
 end)
 
