@@ -12,7 +12,7 @@ local function IsNearZone ( location )
 	local playerloc = GetEntityCoords(player, 0)
 
 	for i = 1, #location do
-		if #(playerloc - location[i]) < 2.0 then
+		if #(playerloc - location[i]) < 2.2 then
 			return true, i
 		end
 	end
@@ -21,24 +21,25 @@ end
 
 ---- spawn ped 
 Citizen.CreateThread(function()
-    --local hashModel = GetHashKey("RE_GOLDPANNER_MALES_01")  -- Set PED ID
 	local hashModel = GetHashKey(Config.Ped)
         -- Loading Model
-       if IsModelValid(hashModel) then 
+    	if IsModelValid(hashModel) then 
            RequestModel(hashModel)
-           while not HasModelLoaded(hashModel) do                
+        	while not HasModelLoaded(hashModel) do                
                Wait(100)
-           end
-       end        
+        	end
+    	end        
        -- Spawn Ped
-       local npc = CreatePed(hashModel, 1416.92, 273.55, 88.53, 198.26, false, true, true, true)
-       Citizen.InvokeNative(0x283978A15512B2FE, npc, true) -- SetRandomOutfitVariation
-       SetEntityNoCollisionEntity(PlayerPedId(), npc, false)
-       SetEntityCanBeDamaged(npc, false)
-       SetEntityInvincible(npc, true)
-       Wait(1000)
-       FreezeEntityPosition(npc, true) -- NPC can't escape
-       SetBlockingOfNonTemporaryEvents(npc, true) -- NPC can't be scared
+		for k, v in pairs(Config.Blips) do
+    		local npc = CreatePed(hashModel, v.x, v.y, v.z, v.h, false, true, true, true)
+    		Citizen.InvokeNative(0x283978A15512B2FE, npc, true) -- SetRandomOutfitVariation
+    		SetEntityNoCollisionEntity(PlayerPedId(), npc, false)
+    		SetEntityCanBeDamaged(npc, false)
+    		SetEntityInvincible(npc, true)
+    		Wait(1000)
+    		FreezeEntityPosition(npc, true) -- NPC can't escape
+    		SetBlockingOfNonTemporaryEvents(npc, true) -- NPC can't be scared
+		end
 end)
 
 
@@ -84,16 +85,13 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-
 		local IsZone, IdZone = IsNearZone(Config.Coords)      
-       
-        if IsZone then 
+        	if IsZone then 
 			DisplayHelp(Config.Shoptext, 0.50, 0.95, 0.6, 0.6, true, 255, 255, 255, 255, true, 10000)
             if IsControlJustPressed(0, keys['E']) then
                 WarMenu.OpenMenu('fence')
             end
         end
-
 		Citizen.Wait(0)
 	end
 end)
@@ -104,10 +102,16 @@ AddEventHandler('UI:NotificaVenta', function( _message )
 end)
 
 Citizen.CreateThread(function()
-	for k, v in pairs(Config.Blips) do
-        local blip = N_0x554d9d53f696d002(1664425300, v.x, v.y, v.z)
-		SetBlipSprite(blip, Config.BlipSprite, 1)
-		SetBlipScale(blip, 0.2)
-		Citizen.InvokeNative(0x9CB1A1623062F402, blip, Config.BlipName)
-	end  
+	while true do
+		if Config.BlipToggle == True then
+			Wait(1000)
+		else
+		for k, v in pairs(Config.Blips) do
+        	local blip = N_0x554d9d53f696d002(1664425300, v.x, v.y, v.z)
+				SetBlipSprite(blip, Config.BlipSprite, 1)
+				SetBlipScale(blip, 0.2)
+				Citizen.InvokeNative(0x9CB1A1623062F402, blip, Config.BlipName)
+			end
+		end
+	end
 end)
