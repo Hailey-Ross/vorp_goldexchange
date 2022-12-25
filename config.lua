@@ -43,7 +43,7 @@ Config.Chatarra = {
 			['ExchangeRateTo'] = 1, --Exchange Rate to Gold Currency
 			['ExchangeCostTo'] = 5.0, --Exchange Cost to Gold Currency
 			['ExchangeBarsBack'] = 1, --Exchange Gold Bar Count Back from Currency
-			['ExchangeCurrencyCost'] = 1.5, --Exchange Cost in Gold Currency per line above returned goldbar
+			['ExchangeCurrencyCost'] = 1.2, --Exchange Cost in Gold Currency per line above returned goldbar
 			['Item'] = "goldbar"
 		}
 	}
