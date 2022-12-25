@@ -1,4 +1,4 @@
-Config = {}
+Config = {} 
 
 Config.NoMoney = "You need $5 to exchange gold"
 Config.NoInv = "You don't have any Gold Bars"
@@ -14,10 +14,13 @@ Config.ItemMessageBack = ' Gold Bar'
 Config.MaxGoldBars = 99
 
 Config.BlipSprite = -2029148647
+Config.BlipSize = 0.2   -- Default size is 0.2
 Config.BlipName = 'Gold Exchange'
-Config.BlipToggle = False-- Toggle Blips
+Config.BlipToggle = False -- Toggle Blips
 
 Config.Ped = 'RE_GOLDPANNER_MALES_01'  -- Alter PED Here https://sporny-dev.net/index.php?title=Peds
+Config.OutfitVariation = true   -- true / false for outfit randomization
+Config.PedCollision = false     -- true / false
 
 Config.Coords = {
 	vector3(1416.92,273.55,90.14) -- Emerald Ranch Fence Location
@@ -40,7 +43,7 @@ Config.Chatarra = {
 			['ExchangeRateTo'] = 1, --Exchange Rate to Gold Currency
 			['ExchangeCostTo'] = 5.0, --Exchange Cost to Gold Currency
 			['ExchangeBarsBack'] = 1, --Exchange Gold Bar Count Back from Currency
-			['ExchangeCurrencyCost'] = 1.5, --Exchange Cost in Gold Currency per line above returned goldbar
+			['ExchangeCurrencyCost'] = 1.2, --Exchange Cost in Gold Currency per line above returned goldbar
 			['Item'] = "goldbar"
 		}
 	}
