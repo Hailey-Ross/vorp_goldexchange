@@ -1,5 +1,6 @@
 local OutfitVar = Config.OutfitVariation
 local BlipSize = Config.BlipSize
+local PedCollision = Config.PedCollision
 
 local keys = {
     -- Letter E
@@ -35,7 +36,7 @@ Citizen.CreateThread(function()
 		for k, v in pairs(Config.Blips) do
     		local npc = CreatePed(hashModel, v.x, v.y, v.z, v.h, false, true, true, true)
     		Citizen.InvokeNative(0x283978A15512B2FE, npc, OutfitVar) -- SetRandomOutfitVariation
-    		SetEntityNoCollisionEntity(PlayerPedId(), npc, false)
+    		SetEntityNoCollisionEntity(PlayerPedId(), npc, PedCollision)
     		SetEntityCanBeDamaged(npc, false)
     		SetEntityInvincible(npc, true)
     		Wait(1000)
